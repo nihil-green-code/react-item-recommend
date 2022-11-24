@@ -9,12 +9,618 @@
   <meta name="description" content="Web site created using create-react-app" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
   <title>React App</title>
+
+  <style>
+    .detail_info {
+      text-align: center;
+    }
+
+    .detail_info img:nth-of-type(2),
+    .detail_info img:nth-of-type(3) {
+      width: 50px;
+    }
+
+    .detail_info span:first-of-type {
+      font-size: 60px;
+    }
+
+    .detail_info span:last-of-type {
+      font-size: 20px;
+    }
+
+
+    .detail_info span:nth-of-type(3) img,
+    .detail_info span:nth-of-type(4) img {
+      width: 860px;
+    }
+  </style>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+  <header>
+    <h1 class="title-logo">
+      <span>KALL</span>
+      <a href="../../index.html">
+        <img src="/images/kall-logo.png" alt="KALL 로고">
+      </a>
+    </h1>
+
+    <nav>
+      <ul class="main-nav">
+        <li>
+          <a href="../../product/">주문제작</a>
+        </li>
+        <li>
+          <a href="../../design/">디자인</a>
+        </li>
+        <li>
+          <a href="../../etc/">ETC</a>
+        </li>
+        <li>
+          <a href="../../community/guide/">커뮤니티</a>
+        </li>
+      </ul>
+    </nav>
+
+    <input type="search" name="keyword" placeholder="검색어를 입력하세요">
+    <ul class="user-menu">
+      <li>
+        <a href="../../sighin/" title="로그인">
+          <span class="visually-hidden">로그인</span>
+          <i class="fas fa-key"></i>
+        </a>
+      </li>
+      <li>
+        <a href="../../sighup/" title="회원가입">
+          <span class="visually-hidden">회원가입</span>
+          <i class="fas fa-user-plus"></i>
+        </a>
+      </li>
+      <li>
+        <a href="../../cart/" title="장바구니">
+          <span class="visually-hidden">장바구니</span>
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </li>
+    </ul>
+  </header>
+
+  <main>
+    <div class="product-detail">
+      <a class="gototop" href="#">
+        <i class="fas fa-arrow-circle-up"></i>
+      </a>
+      <div id="top">
+        <div class="top-left">
+          <div class="main-image">
+            <img src="/images/capture/order_made/1/main_1.jpg" alt="하트케이크">
+          </div>
+          <div class="other-images">
+            <!-- <div>이</div>
+              <div>미</div>
+              <div>지</div>
+              <div>들</div>
+              <div>임</div> -->
+          </div>
+        </div>
+
+        <div class="top-right">
+          <p class="tags">
+            <span class="tag">
+              <a href="#">#꽃데코</a>
+            </span>
+            <span class="tag">
+              <a href="#">#레터링</a>
+            </span>
+            <span class="tag">
+              <a href="#">#하트</a>
+            </span>
+          </p>
+
+          <div class="right-header">
+            <h2>러블리 하트케이크</h2>
+            <div class="icons">
+              <a href="#" class="heart" title="찜하기">
+                <span class="visually-hidden">찜하기</span>
+                <!-- TODO: 클릭하면 하트가 채워지게끔 구현 -->
+                <i class="far fa-heart"></i>
+              </a>
+
+              <a href="#" class="share" title="공유하기">
+                <span class="visually-hidden">공유하기</span>
+                <i class="fas fa-share-square"></i>
+              </a>
+            </div>
+
+            <p class="rating">
+              <!-- 여기에는 별표를 다섯개두고 0점부터 5점까지 평가 실수는 0.5점 단위로 -->
+              <span class="visually-hidden">상품평점</span>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span class="rating-number">(4.5)</span>
+            </p>
+
+          </div>
+
+          <p class="price">40,000원</p>
+          <p class="shipping-price">배송비<span>3,000원 (주문 시 결제)</span></p>
+
+          <!-- 옵션은 좀 더 살펴보도록 하자. -->
+          <!-- 라디오 버튼 형식 -->
+
+          <div class="select radio item-color">
+            <p>시트</p>
+            <input type="radio" name="sheet" id="sheet1" value="white" hidden>
+            <label for="sheet1">일반</label>
+
+            <input type="radio" name="sheet" id="sheet2" value="red" hidden>
+            <label for="sheet2">레드벨벳</label>
+
+            <input type="radio" name="sheet" id="sheet3" value="blueberry" hidden>
+            <label for="sheet3">블루베리</label>
+          </div>
+
+          <div class="select radio item-shape">
+            <p>모양</p>
+            <input type="radio" name="shape" id="shape1" value="round" hidden>
+            <label for="shape1">원형</label>
+
+            <input type="radio" name="shape" id="shape2" value="rectangle" hidden>
+            <label for="shape2">사각형</label>
+
+            <input type="radio" name="shape" id="shape3" value="triangle" hidden>
+            <label for="shape3">하트</label>
+          </div>
+
+          <div class="select radio item-color">
+            <p>크림</p>
+            <input type="radio" name="color" id="color1" value="white" hidden>
+            <label for="color1">크림색</label>
+
+            <input type="radio" name="color" id="color2" value="red" hidden>
+            <label for="color2">빨간색</label>
+
+            <input type="radio" name="color" id="color3" value="choco" hidden>
+            <label for="color3">초코색</label>
+          </div>
+
+          <div class="select item-lettering">
+            <label for="lettering">원하는 문구를 입력하세요.</label>
+            <input type="text" name="lettering" id="lettering" maxlength="15" placeholder="한글은 12글자 영어는 15글자 가능합니다.">
+          </div>
+
+          <div class="select file item-image">
+            <p>이미지 업로드</p>
+            <input type="file" name="image" id="image" accept="image/*" hidden>
+            <input type="text" readonly class="image-upload-text">
+            <label for="image">파일 찾기</label>
+          </div>
+
+          <div class="select more-request">
+            <label for="more-request">추가 요청사항</label>
+            <input type="text" name="moreRequest" id="more-request" maxlength="40" placeholder="방문수령 원하시면 1:1 문의 주세요">
+          </div>
+
+          <div class="option-complete">
+            <button>선택 완료</button>
+          </div>
+
+          <!-- 위에서 옵션을 선택한 후에 선택 완료 버튼을 누르면 -->
+          <!-- 아래의 리스트에 차곡 차곡 쌓이는 시스템? -->
+          <p class="seleted-item">선택된 상품 총 0개</p>
+          <div class="items">
+            <!-- <div class="item">상품 이름 - 일반, 초코색, 원형 / 1개</div>
+              <div class="item">상품 이름 - 레드벨벳, 빨간색, 사각형 / 1개</div> -->
+          </div>
+
+          <div class="buttons">
+            <button>장바구니</button>
+            <button>바로 구매</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>다른 상품 추천</h3>
+      <div class="other-items">
+        <!-- <div class="item">
+            <div class="image">
+              <a href="#">
+                <img src="/images/cake/product/product2.png" alt="빈티지 메리 체리 케이크">
+              </a>
+            </div>
+            <div class="info">
+              <h4>
+                <a href="#">빈티지 메리 체리 케이크</a>
+              </h4>
+              <p class="price">36,000원</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-number">(4.5)</span>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <a href="#">
+                <img src="/images/cake/product/product4.png" alt="달력 케이크">
+              </a>
+            </div>
+            <div class="info">
+              <h4>
+                <a href="#">달력 케이크</a>
+              </h4>
+              <p class="price">35,000원</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-number">(4.5)</span>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <a href="#">
+                <img src="/images/cake/product/product5.png" alt="감사패 케이크">
+              </a>
+            </div>
+            <div class="info">
+              <h4>
+                <a href="#">감사패 케이크</a>
+              </h4>
+              <p class="price">42,000원</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-number">(4.5)</span>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <a href="#">
+                <img src="/images/cake/product/product7.jpg" alt="명품 가방 케이크">
+              </a>
+            </div>
+            <div class="info">
+              <h4>
+                <a href="#">명품 가방 케이크</a>
+              </h4>
+              <p class="price">43,000원</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-number">(4.5)</span>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <a href="#">
+                <img src="/images/cake/product/product3.jpg" alt="팔레트 케이크">
+              </a>
+            </div>
+            <div class="info">
+              <h4>
+                <a href="#">팔레트 케이크</a>
+              </h4>
+              <p class="price">38,000원</p>
+              <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-number">(4.5)</span>
+              </p>
+            </div>
+          </div> -->
+      </div>
+
+      <div class="item-info">
+        <section id="details">
+          <h3 class="visually-hidden">상품 상세 정보</h3>
+          <ul>
+            <li aria-selected="true">
+              <a href="#details">상품 상세 정보</a>
+            </li>
+            <li aria-selected="false">
+              <a href="#shipping-info">배송/교환/환불 안내</a>
+            </li>
+            <li aria-selected="false">
+              <a href="#review">구매 후기</a>
+            </li>
+            <li aria-selected="false">
+              <a href="#questions">상품 문의</a>
+            </li>
+          </ul>
+
+          <div class="content">
+            <div class="description-grid">
+              <div class="grid-title">제품명</div>
+              <div class="grid-content">러블리 하트케이크</div>
+              <div class="grid-title">제품 종류</div>
+              <div class="grid-content">빵류(케이크류)</div>
+              <div class="grid-title">보관방법</div>
+              <div class="grid-content">
+                냉동보관 (영하18도)
+              </div>
+              <div class="grid-title">원재료명</div>
+              <div class="grid-content">
+                버터, 설탕, 전란, 박력분, 코코아분말, 베이킹파우더, 베이킹소다, 우유, 바닐라빈추출물, 갈색설탕, 식용유, 버터크림
+              </div>
+              <div class="grid-title">유통기한</div>
+              <div class="grid-content">
+                제조일로부터 3개월
+              </div>
+              <div class="grid-title">주의사항</div>
+              <div class="grid-content">
+                주의사항 - * 이 제품은 우유, 계란, 생크림을 사용한 제품과 같은 시설에서 제조합니다. * 본 제품은 공정거래위원회 고시 소비자 분쟁해결 기준에 의거 교환 또는 보상을 받을 수
+                있습니다. 유통기한 이내라도 개봉
+                이후 최대한 빠른 시일 내에 드시기 바랍니다. 부정 불량 식품 신고는 국번없이 1399</div>
+            </div>
+
+            <!-- 제품 상세 부분 -->
+            <div class="detail_info">
+              <span>
+                <img src="/images/capture/order_made/delivery.jpg" alt="배송안내">
+                <img src="/images/capture/quotation_up.png" alt="따옴표">
+                <br><br>
+                사랑스러움 가득 담긴, 러블리 하트 케이크
+                <br><br>
+                <img src="/images/capture/quotation_down.png" alt="따옴표">
+                <br>
+              </span>
+
+              <span>
+                <p>
+                  특별하고 기억에 남을 케이크를 찾으세요~?
+                  <br><br>
+                  하나뿐인 나만의 특별한 케이크♥<br>
+                  레터링 문구로 마음을 표현하세요!<br><br>
+                </p>
+              </span>
+
+              <span>
+                <img src="/images/capture/order_made/1/side.jpg" alt="사진1">
+                <br><br>
+                <img src="/images/capture/order_made/1/side2.jpg" alt="사진2">
+                <br><br>
+                <img src="/images/capture/order_made/1/side3.png" alt="사진3">
+                <br><br>
+                <img src="/images/capture/order_made/1/side4.jpg" alt="사진4">
+                <br><br>
+              </span>
+
+              <span>
+                <p>케이크 구성
+                  <br><br>
+                  <img src="./images/capture/order_made/package2.png" alt="구성">
+                  <br><br>
+                  포장 구성
+                  <br><br>
+                  <img src="./images/capture/order_made/package.png" alt="">
+                  <br><br>
+                </p>
+              </span>
+            </div>
+
+          </div>
+        </section>
+        <section id="shipping-info">
+          <h3 class="visually-hidden">배송/교환/환불 안내</h3>
+          <ul>
+            <li aria-selected="false">
+              <a href="#details">상품 상세 정보</a>
+            </li>
+            <li aria-selected="true">
+              <a href="#shipping-info">배송/교환/환불 안내</a>
+            </li>
+            <li aria-selected="false">
+              <a href="#review">구매 후기</a>
+            </li>
+            <li aria-selected="false">
+              <a href="#questions">상품 문의</a>
+            </li>
+          </ul>
+
+          <div class="content">
+            <pre>
+    《 배송안내 》
+    - 배송비 : 기본 배송료는 3,000원입니다. (도서,산간,오지 일부지역은 배송이 불가합니다.)
+
+    - 택배배송은 주문시점, 배송지에 따라 상이합니다. (서울지역만 당일택배배송이 가능합니다.)
+
+    [서울 당일택배배송]
+
+    월요일~금요일 배송 (토요일, 일요일 휴무)
+
+    서울 당일택배배송의 경우 정확한 시간 지정은 어려우며, 우천시 다소 늦어질 수 있습니다.
+
+    [전국 우체국택배배송]
+
+    화요일~금요일 배송 (일요일, 월요일 휴무)
+
+    택배배송의 특성상 받는 시간대는 미리 알 수 없는 점 미리 말씀드립니다.
+
+
+    《 환불안내 》
+    - 케이크는 식품 특성상 주문 요청에 의해 제작되기 때문에 단순 변심, 임의 반품에 의한 교환(재배송) 환불이 불가한 점 양해 부탁드립니다.
+
+    - 고객님의 사정으로 인한 주소지 불충분 및 수취지연 시 발생되는 제품의 파손이나 변질에 대해 책임지지 않습니다.
+
+    - 파손/ 변질된 제품 사진을 접수하지 않는 경우 교환(재배송) 환불이 불가합니다.
+
+    - 배송된 상품의 신선도나 구성품 누락 시 KALL 의 책임인 경우 새로운 구성으로 교환해드립니다. (문의 1588-9780)
+                </pre>
+          </div>
+        </section>
+        <section id="review">
+          <h3 class="visually-hidden">구매 후기</h3>
+          <ul>
+            <li aria-selected="false">
+              <a href="#details">상품 상세 정보</a>
+            </li>
+            <li aria-selected="false">
+              <a href="#shipping-info">배송/교환/환불 안내</a>
+            </li>
+            <li aria-selected="true">
+              <a href="#review">구매 후기</a>
+            </li>
+            <li aria-selected="false">
+              <a href="#questions">상품 문의</a>
+            </li>
+          </ul>
+
+          <div class="content">
+            <details class="review-box">
+              <summary>
+                <div class="review-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <span class="rating-number">(5)</span>
+                </div>
+                <div class="review-title">강추합니다</div>
+                <div class="review-user">YOO*******님이 작성한 후기</div>
+              </summary>
+
+              <div class="review-content">
+                배송도 빠르게왔고 내용도 안찌그러지게 고정 잘되서 왔어요~! 색감이 살짝 다르긴했지만 완전 만족스럽구용 선물받은 사람도 좋아했습니다~~ 다음에 또 이용할게요~
+              </div>
+            </details>
+            <div class="review-buttons">
+              <button>후기남기기</button>
+            </div>
+          </div>
+        </section>
+        <section id="questions">
+          <h3 class="visually-hidden">상품 문의</h3>
+          <ul>
+            <li aria-selected="false">
+              <a href="#details">상품 상세 정보</a>
+            </li>
+            <li aria-selected="false">
+              <a href="#shipping-info">배송/교환/환불 안내</a>
+            </li>
+            <li aria-selected="false">
+              <a href="#review">구매 후기</a>
+            </li>
+            <li aria-selected="true">
+              <a href="#questions">상품 문의</a>
+            </li>
+          </ul>
+
+          <div class="content question">
+            <div class="box">
+              <details class="question-box">
+                <summary>
+                  <div class="question-title">배송문의</div>
+                  <div class="question-user">YOO*******님이 작성한 문의</div>
+                </summary>
+
+                <div class="question-content">
+                  Q. <br>
+                  금요일 오전에 주문했는데 바로 배송이 오나요??
+                </div>
+                <div class="question-content">
+                  A.<br>_
+                  안녕하세요 칼케이크입니다.
+                  <br>
+                  고객님 금요일오후 5시 마감 전 주문해주시면 토요일 배송이 가능합니다.
+                  <br>
+                  감사합니다.
+                </div>
+
+              </details>
+              <details class="question-box">
+                <summary>
+                  <div class="question-title">재입고문의</div>
+                  <div class="question-user">YOO*******님이 작성한 문의</div>
+                </summary>
+
+                <div class="question-content">
+                  Q. <br>
+                  다시 주문하고싶은데 재입고 언제되나요 ?
+                </div>
+                <div class="question-content">
+                  A.<br>
+                  고객님 안녕하세요. <br>
+                  해당상품은 아직 재입고 계획이 없습니다.
+                  <br>
+                  비슷한 제품으로 **케이크를 추천해드립니다.
+                  <br> 감사합니다.
+                </div>
+
+              </details>
+            </div>
+            <div class="question_input">
+              <input class="q_input1" type="text" placeholder="제목">
+              <input class="q_input2" type="text" placeholder="문의글을 작성해주세요">
+            </div>
+            <div class="question-buttons">
+              <button>문의하기</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="links">
+      <a href="../../agreement">이용약관</a>
+      <span>|</span><a href="../../privacy">개인정보처리방침</a>
+      <span>|</span><a href="../../community/guide/">고객센터</a>
+    </div>
+    <address class="site-address">
+      <p>
+        <small>
+          안내전화: 1588-9780
+          <span>|</span> 상호 : KALL
+        </small>
+      </p>
+    </address>
+    <div class="site-info">
+      <p>
+        <small>
+          사업장소재지 : 경기 성남시 분당구 돌마로 46 (광천빌딩 5층)
+        </small>
+      </p>
+      <p>
+        <small>
+          사업자등록번호 : 214-86-26812
+          <span>|</span> 대표이사: 김상곤
+        </small>
+      </p>
+      <p>
+        <small>
+          COPYRIGHT <i class="far fa-copyright"></i> KALL. ALL RIGHTS RESERVED.
+        </small>
+      </p>
+    </div>
+  </footer>
 </body>
 
 </html>

@@ -1,0 +1,619 @@
+/* ==================== 상품 상세 페이지 ==================== */
+a.gototop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 4rem;
+  color: var(--c-point);
+}
+
+/* ==================== 상단 영역 ==================== */
+div.product-detail {
+  color: var(--black-3);
+}
+
+div.product-detail div#top {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+div#top div.top-left {
+  flex: 0 560px;
+}
+
+div#top div.top-right {
+  flex: 1;
+}
+
+/* ==================== 상단 왼쪽 ==================== */
+div#top div.top-left div.main-image {
+  display: block;
+  text-align: center;
+  line-height: 560px;
+  box-sizing: border-box;
+  font-size: 2rem;
+  border: 1px solid var(--black-3);
+  margin-bottom: 10px;
+}
+
+div#top div.top-left div.main-image img {
+  width: 100%;
+  height: 560px;
+  display: block;
+}
+
+div#top div.top-left div.other-images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+div.other-images div {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid var(--black-3);
+}
+
+div#top div.top-left div.main-image:hover,
+div.other-images div:hover {
+  border: 1px solid var(--c-point);
+}
+
+/* ==================== 상단 오른쪽 ==================== */
+div#top div.top-right {
+  font-size: 1.2rem;
+}
+
+div.top-right>div.right-header {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  border-bottom: 1px solid #333333;
+  padding-bottom: 40px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+div.top-right>div.right-header h2 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  flex: 1;
+}
+
+div.right-header div.icons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+div.icons a.heart,
+div.icons a.share {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #33333330;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  color: #aaaaaa;
+}
+
+div.icons a.heart:hover,
+div.icons a.share:hover {
+  color: var(--c-point);
+  border: 2px solid var(--c-point);
+}
+
+div#top div.top-right p.tags {
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+p.tags span.tag {
+  display: inline-block;
+}
+
+p.tags span.tag:not(:last-of-type) {
+  margin-right: 5px;
+}
+
+p.tags span.tag a {
+  padding: 5px 10px;
+  display: block;
+  background-color: var(--c-point3);
+  color: var(--black-3);
+  box-sizing: border-box;
+}
+
+p.tags span.tag a:hover {
+  background-color: var(--c-point3-h);
+}
+
+div#top div.top-right p.price {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+div#top div.top-right p.shipping-price {
+  margin-bottom: 50px;
+}
+
+p.shipping-price span {
+  margin-left: 5px;
+  font-weight: 700;
+}
+
+div#top div.top-right p.rating {
+  color: var(--c-point-h);
+  margin-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+}
+
+div#top div.top-right p.rating span.rating-number {
+  color: var(--black-3);
+}
+
+/* ==================== 옵션 선택 ==================== */
+div.top-right div.select {
+  display: flex;
+  flex-direction: column;
+}
+
+div.top-right div.select:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+div.top-right div.select label {
+  margin-bottom: 10px;
+}
+
+div.top-right div.select select {
+  all: unset;
+  appearance: auto;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: var(--white-f9);
+}
+
+div.top-right div.select select:focus {
+  border: 1px solid var(--c-point);
+}
+
+div.top-right div.select.radio,
+div.top-right div.select.file {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+div.top-right div.select.radio p,
+div.top-right div.select.file p {
+  flex: 100%;
+}
+
+div.top-right div.select.radio input[type="radio"]+label {
+  padding: 10px 20px;
+  background-color: var(--white-e);
+  color: var(--black-3);
+  margin-bottom: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+div.top-right div.select.radio input[type="radio"]:checked+label {
+  background-color: var(--c-point);
+  color: var(--black-3);
+}
+
+div.top-right div.select input[type="text"] {
+  all: unset;
+  padding: 10px;
+  background-color: var(--white-f9);
+  color: var(--black-3);
+  box-sizing: border-box;
+}
+
+div.top-right div.select.file input[type="text"] {
+  flex: 1;
+}
+
+div.top-right div.select.file label {
+  flex: 0 100px;
+  background-color: var(--c-point);
+  color: var(--black-3);
+  padding: 10px;
+  margin-bottom: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+div.top-right div.select.file label:hover {
+  background-color: var(--c-point-h);
+  color: white;
+}
+
+div.top-right div.select input:focus {
+  border-bottom: 2px solid var(--c-point-h);
+}
+
+/* ==================== 옵션 선택 완료 버튼 ==================== */
+div.option-complete {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+div.option-complete button {
+  all: unset;
+  width: 100%;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  background-color: var(--c-point);
+  color: var(--black-3);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+div.option-complete button:hover {
+  background-color: var(--c-point-h);
+  color: white;
+}
+
+/* ==================== 선택한 옵션 적용된 상품 리스트 ==================== */
+p.seleted-item {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+div.items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+div.items div.item {
+  background-color: var(--white-f9);
+  padding: 10px;
+}
+
+/* ==================== 상품 수량 조절 ==================== */
+div.top-right div.count {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+div.top-right div.count div.minus,
+div.top-right div.count div.plus {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #33333330;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #aaaaaa;
+}
+
+div.top-right div.count div.minus:hover,
+div.top-right div.count div.plus:hover {
+  border-color: var(--c-point);
+  color: var(--c-point);
+}
+
+div.top-right div.count div.number {
+  padding: 10px;
+  background-color: var(--white-f9);
+  flex: 0 50px;
+  text-align: center;
+}
+
+/* ==================== 구매 버튼 ==================== */
+div.top-right div.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 100px;
+}
+
+div.buttons button {
+  all: unset;
+  flex: 1;
+  padding: 20px 10px;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--c-point);
+  color: var(--black-3);
+  font-size: 1.4rem;
+}
+
+div.buttons button:hover {
+  background-color: var(--c-point-h);
+  color: white;
+}
+
+/* ==================== 다른 상품 추천 ==================== */
+div.product-detail>h3 {
+  font-size: 1.4rem;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333333;
+  font-weight: 700;
+}
+
+div.other-items {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+div.other-items div.item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 2px solid var(--white-e);
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+div.other-items div.item:hover {
+  border-color: var(--c-point-h);
+}
+
+div.item div.image {
+  background-color: var(--black-3);
+  color: white;
+  text-align: center;
+}
+
+div.item div.image img {
+  display: block;
+  width: 100%;
+  height: 180px;
+}
+
+div.item div.image a {
+  display: block;
+  line-height: 180px;
+  color: white;
+}
+
+div.item div.info {
+  font-size: 1.2rem;
+}
+
+div.item div.info p.price {
+  margin-bottom: 5px;
+}
+
+div.item div.info p.rating {
+  color: var(--c-point-h);
+}
+
+div.item div.info p.rating span.rating-number {
+  color: var(--black-3);
+}
+
+div.info h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+div.info h4 a {
+  color: var(--c-link);
+}
+
+div.info h4 a:hover {
+  color: var(--c-link-h);
+  text-decoration: underline;
+}
+
+/* ==================== 탭 영역 ==================== */
+div.item-info section ul {
+  display: flex;
+  flex-direction: row;
+}
+
+div.item-info section ul>li {
+  flex: 1;
+  text-align: center;
+  line-height: 50px;
+  background-color: var(--c-point-n);
+  border-bottom: 2px solid var(--c-point-h);
+  font-size: 1.2rem;
+  box-sizing: border-box;
+}
+
+div.item-info section ul>li a {
+  display: block;
+  /* color: var(--c-point-h); */
+  color: #33333380;
+}
+
+div.item-info section ul>li a:hover {
+  background-color: var(--c-point);
+}
+
+div.item-info section ul>li[aria-selected="true"] {
+  border: 2px solid var(--c-point-h);
+  border-bottom: none;
+}
+
+div.item-info section ul>li[aria-selected="true"] a {
+  background-color: var(--c-point-h);
+  color: var(--black-3);
+  font-weight: 700;
+}
+
+/* ==================== 탭 본문 ==================== */
+div.item-info section div.content {
+  padding: 20px;
+  border: 2px solid var(--c-point-h);
+  border-top: none;
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+div.content p {
+  word-break: break-all;
+}
+
+div.item-info section:not(:last-of-type) {
+  margin-bottom: 50px;
+}
+
+/* ==================== 제품 상세정보 표 ==================== */
+div.description-grid {
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  margin-bottom: 50px;
+  gap: 2px;
+}
+
+div.description-grid div.grid-title {
+  background-color: var(--c-point);
+  font-weight: 700;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.description-grid div.grid-content {
+  padding: 10px;
+  background-color: var(--white-f9);
+}
+
+/* ==================== 상품 수량 ==================== */
+div.count-bar {
+  display: grid;
+  grid-template-columns: 1fr 170px .5fr;
+  align-items: center;
+}
+
+div.count-custom {
+  display: grid;
+  grid-template-columns: 150px 20px;
+  grid-template-rows: 20px 20px;
+}
+
+div.count-custom input {
+  all: unset;
+  background-color: var(--white-f9);
+  color: var(--black-3);
+  grid-row: 1 / -1;
+  padding: 10px;
+}
+
+div.count-custom button {
+  all: unset;
+  background-color: var(--c-point);
+  color: var(--black-3);
+  text-align: center;
+  cursor: pointer;
+}
+
+div.count-custom button:hover {
+  background-color: var(--c-point-h);
+  color: var(--white-f);
+}
+
+div.count-price {
+  text-align: right;
+}
+
+/* ==================== 후기,문의 템플릿 ==================== */
+details.review-box summary,
+details.question-box summary,
+.question_input,
+.question_input>input {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--white-d);
+  padding: 10px;
+  cursor: pointer;
+}
+
+details.review-box summary div.review-rating {
+  color: var(--c-point-h);
+  margin-right: 20px;
+}
+
+details.review-box summary div.review-rating span {
+  color: var(--black-3);
+}
+
+details.review-box summary div.review-title,
+details.question-box summary div.question-title {
+  flex: 1;
+}
+
+details.review-box div.review-content,
+details.question-box div.question-content {
+  padding: 10px;
+  border: 1px solid var(--white-d);
+  border-top: none;
+}
+
+div.question-buttons button,
+div.review-buttons button {
+  all: unset;
+  width: 90px;
+  padding: 15px 20px;
+  margin-top: 10px;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--c-point);
+  color: var(--black-3);
+  font-size: 1.2rem;
+}
+
+div.question-buttons,
+div.review-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.question-box,
+.review-box {
+  margin-bottom: 10px;
+}
+
+div.question-buttons button:hover,
+div.review-buttons button:hover {
+  background-color: var(--c-point-h);
+  color: white;
+}
+
+.question_input>input {
+  height: 30px;
+}
+
+.question_input>input {
+  border: none;
+  display: flex;
+}
+
+.question_input>.q_input2 {
+  width: 100%;
+  border-left: 1px solid var(--white-d);
+}
